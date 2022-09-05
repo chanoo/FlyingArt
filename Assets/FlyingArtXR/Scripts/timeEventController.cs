@@ -59,8 +59,6 @@ public class timeEventController : MonoBehaviour
     private void Awake()
     {
         savedTimeData = PlayerPrefs.GetInt("timeStandard");
-        if (standard==StandardTimeEvent.hybrid)
-        {
             switch (savedTimeData)
             {
                 case 0:
@@ -79,6 +77,8 @@ public class timeEventController : MonoBehaviour
                     standard = StandardTimeEvent.system;
                     break;
             }
+        if (standard==StandardTimeEvent.hybrid)
+        {
 
         }
 
@@ -244,7 +244,8 @@ public class timeEventController : MonoBehaviour
                 totalCurrentSeconds = (int)sT.totalGameSeconds;
                 break;
             case StandardTimeEvent.hybrid:
-                totalCurrentSeconds = (DateTime.Now.Hour * 60 * 60) + (DateTime.Now.Minute * 60) + DateTime.Now.Second;
+                totalCurrentSeconds = (int)sT.totalGameSeconds;
+                //totalCurrentSeconds = (DateTime.Now.Hour * 60 * 60) + (DateTime.Now.Minute * 60) + DateTime.Now.Second;
                 break;
         }
 
@@ -286,7 +287,7 @@ public class timeEventController : MonoBehaviour
 
             GUI.Label(new Rect(100, 80, 200, 40), "현재 시간초 : " + totalCurrentSeconds.ToString(), guiStyle);
             GUI.Label(new Rect(100, 160, 200, 40), "다음이벤트 시간초 : " + nextEventTime.ToString(), guiStyle);
-            GUI.Label(new Rect(100, 200, 200, 40), "이벤트종료 시간초 : " + endminutes.ToString() + "분" + endEvevtTime.ToString() + "초/", guiStyle);
+            //GUI.Label(new Rect(100, 200, 200, 40), "이벤트종료 시간초 : " +(nextEventTime / 60) / 60 % 24 + "시"+ endminutes.ToString() + "분" + endEvevtTime.ToString() + "초/", guiStyle);
 
         }
     }
