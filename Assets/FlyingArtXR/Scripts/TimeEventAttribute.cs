@@ -6,8 +6,6 @@ using UnityEngine;
 //[RequireComponent(typeof(timeEventController))]
 public class TimeEventAttribute : MonoBehaviour
 {
-    timeEventController tc;
-    private SpecifyTime sT;
 
     [Header("시작타임설정")]
     public int hours;
@@ -28,9 +26,9 @@ public class TimeEventAttribute : MonoBehaviour
 
     private void Start()
     {
-        tc= GetComponentInParent<timeEventController>();
-        sT = GameObject.FindObjectOfType<SpecifyTime>();
-        int TcTime = tc.totalCurrentSeconds;
+        timeEventController tc = GetComponentInParent<timeEventController>();
+        SpecifyTime sT = GetComponentInParent<SpecifyTime>();
+        int TcTime = GetComponentInParent<timeEventController>().totalCurrentSeconds;
         //print($"tc 타임{tc.totalCurrentSeconds}");
         if (tc.standard ==StandardTimeEvent.hybrid)
         {
@@ -57,12 +55,12 @@ public class TimeEventAttribute : MonoBehaviour
 
 
         }
-        else if (tc.standard == StandardTimeEvent.specified)
-        {
-            print("specified select");
-            secondForEvent = seconds + (minutes * 60) + (hours * 60 * 60) + TcTime + (int)sT.totalGameSeconds;
-            secondForEndEvent = secondForEvent + (DueMinute * 60) + DueSecond;
-        }
+        //else if (tc.standard == StandardTimeEvent.specified)
+        //{
+        //    print("specified select");
+        //    secondForEvent = seconds + (minutes * 60) + (hours * 60 * 60) + TcTime + (int)sT.totalGameSeconds;
+        //    secondForEndEvent = secondForEvent + (DueMinute * 60) + DueSecond;
+        //}
         else
         {
             print("systemp");

@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/FlyingArtXR/FlyingArt InsertScene.unity
     guid: 98acab7dfb9aa5f49b4498e0da3adc9a
-  - enabled: 1
+  - enabled: 0
     path: Assets/FlyingArtXR/FlyingArt01.unity
     guid: e9a43e7a04f8f7b45b29bee3125e750a
   m_configObjects:
