@@ -44,12 +44,12 @@ public class Time_Ininitalize : MonoBehaviour
     {
         if (int.TryParse(input_hours.text, out int result))
         {
-            if(result>24)
+            if (result > 24)
                 StartCoroutine(showWarning());
 
             data_hours = result;
         }
-        else 
+        else
             StartCoroutine(showWarning());
 
         if (int.TryParse(input_minutes.text, out int result2))
@@ -104,4 +104,49 @@ public class Time_Ininitalize : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
     }
+    public void LoadFirstScene()
+    {
+        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+    }
+
+
+    public void toggleObject(string name)
+    {
+        GameObject toggleObject1 = GameObject.Find(name);
+        toggleObject1.transform.GetChild(0).gameObject.SetActive(!toggleObject1.transform.GetChild(0).gameObject.activeSelf);
+
+    }
+    public void speedUp()
+    {
+        SpecifyTime speedObject1 = GameObject.FindObjectOfType<SpecifyTime>();
+        speedObject1.speed += 1;
+    }
+    public void speedDown()
+    {
+        SpecifyTime speedObject1 = GameObject.FindObjectOfType<SpecifyTime>();
+        if (speedObject1.speed > 1)
+            speedObject1.speed -= 1;
+    }
+
+    public void timeAdd()
+    {
+        timeEventController tc = GameObject.FindObjectOfType<timeEventController>();
+        foreach (var item in tc.eventList)
+        {
+            item.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        SpecifyTime speedObject1 = GameObject.FindObjectOfType<SpecifyTime>();
+
+        speedObject1.totalGameSeconds += 60;
+    }
+
+    public void toggleDarkLight()
+    {
+
+
+        GameObject day = GameObject.Find("-Env Settings--dayLight");
+        day.transform.GetChild(0).gameObject.SetActive(!day.transform.GetChild(0).gameObject.activeSelf);
+
+    }
+
 }

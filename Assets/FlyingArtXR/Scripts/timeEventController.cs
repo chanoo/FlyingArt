@@ -54,6 +54,10 @@ public class timeEventController : MonoBehaviour
     private float nextTime = 0;
     private int savedTimeData;
 
+    //이벤트최초시간과 마지막시간
+    public int firstEventTime;
+    public int finalEventTime;
+
     //public bool isShowing = false;
 
     private void Awake()
@@ -98,12 +102,16 @@ public class timeEventController : MonoBehaviour
         {
             eventList[i].eventPrefab.SetActive(false);
         }
+
+
         //기간기준가져오기
         currentTime();
 
         approximationTime(eventList.ToArray());
 
     }
+
+
     private void Start()
     {
 
@@ -112,7 +120,7 @@ public class timeEventController : MonoBehaviour
     private void Update()
     {
 
-
+        //interval 마다 이벤트 체크..
         if (Time.time >= nextTime)
         {
             currentTime();
@@ -120,15 +128,25 @@ public class timeEventController : MonoBehaviour
             nextTime += interval;
 
         }
+
+        if(temp_nextEvent == null)
+        {
+            if (totalCurrentSeconds < firstEventTime) GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(true);
+            else GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(false);
+
+            if (totalCurrentSeconds > finalEventTime) GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(true);
+            else GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(false);
+
+        }
+
         if (temp_nextEvent != null)
         {
+
             if (totalCurrentSeconds > nextEventTime && totalCurrentSeconds < endEvevtTime && !temp_nextEvent.eventPrefab.activeSelf)
             {
                 temp_nextEvent.eventPrefab.SetActive(true);
-
-                print("show");
             }
-
+            
             //파티클 서서히 사라지게 하기위해  3 먼저 처리.
             if (totalCurrentSeconds > endEvevtTime - 4 && temp_nextEvent.eventPrefab.activeSelf && par[0].particleCount > 1 && !IsKillParticle)
             {
@@ -169,6 +187,10 @@ public class timeEventController : MonoBehaviour
             if (temp_nextEvent != null)
                 StartCoroutine(GetParticlList());
         }
+        firstEventTime = eventList[0].secondForEvent;
+        print($"first event time is = {eventList[0].secondForEvent}");
+        finalEventTime = eventList[eventList.Count - 1].secondForEndEvent;
+        print($"final event time is = {eventList[eventList.Count - 1].secondForEndEvent}");
     }
 
     IEnumerator GetParticlList()
@@ -287,6 +309,8 @@ public class timeEventController : MonoBehaviour
 
             GUI.Label(new Rect(100, 80, 200, 40), "현재 시간초 : " + totalCurrentSeconds.ToString(), guiStyle);
             GUI.Label(new Rect(100, 160, 200, 40), "다음이벤트 시간초 : " + nextEventTime.ToString(), guiStyle);
+            GUI.Label(new Rect(100, 200, 200, 40), "설정된 스피드 : " +  sT.speed, guiStyle);
+
             //GUI.Label(new Rect(100, 200, 200, 40), "이벤트종료 시간초 : " +(nextEventTime / 60) / 60 % 24 + "시"+ endminutes.ToString() + "분" + endEvevtTime.ToString() + "초/", guiStyle);
 
         }

@@ -23,6 +23,7 @@ public class TimeEventAttribute : MonoBehaviour
     //[HideInInspector]
     public int secondForEndEvent;
 
+  
 
     private void Start()
     {

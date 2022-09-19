@@ -52,7 +52,6 @@ public class SpecifyTime : MonoBehaviour
 
 
 
-
         _seconds = currentSeconds % 60;
         _minutes = currentSeconds / 60 % 60;
         _hours = (currentSeconds / 60) / 60 % 24;

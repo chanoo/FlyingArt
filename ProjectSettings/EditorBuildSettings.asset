@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/FlyingArtXR/FlyingArt InsertScene.unity
     guid: 98acab7dfb9aa5f49b4498e0da3adc9a
   - enabled: 0
-    path: Assets/FlyingArtXR/FlyingArt01.unity
-    guid: e9a43e7a04f8f7b45b29bee3125e750a
+    path: Assets/FlyingArtXR/Boromwat_Test.unity
+    guid: 25315f0c9c565624fb147f873993a1b8
+  - enabled: 1
+    path: Assets/FlyingArtXR/JDCMartCenter_GPS_Test.unity
+    guid: cc0af5638df4c0e47b7cb8f9c34275ad
   m_configObjects:
     AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: d92659cff3a0587408a950f75c69461c,
       type: 2}
