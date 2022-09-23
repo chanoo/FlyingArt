@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 866499321}
   - component: {fileID: 866499320}
   m_Layer: 0
-  m_Name: GPS Hotspot Object (1)
+  m_Name: Hotspot Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,29 +493,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LocationSettings:
     LocationInput:
-      LocationInputType: 0
-      LocationData: {fileID: 11400000, guid: b3d786843e8c12049ba7b2602e0c535d, type: 2}
+      LocationInputType: 1
+      LocationData: {fileID: 11400000, guid: 66340ec8e5ef2994c97b11c2290c0054, type: 2}
       Location:
-        Latitude: 33.4537
-        Longitude: 126.5724
+        Latitude: 33.45358
+        Longitude: 126.572441
         Altitude: 0
         AltitudeMode: 0
         Label: 
       OverrideAltitudeData:
-        OverrideAltitude: 1
+        OverrideAltitude: 0
         Altitude: 0
         AltitudeMode: 0
   HotspotSettings:
-    Prefab: {fileID: 2444609190718472242, guid: 9679f880c7fce794ebb7637a43ae59dc,
-      type: 3}
+    Prefab: {fileID: 283599293516234167, guid: 0c6d940067d61a3449e03e52e0b9d3e2, type: 3}
     PositionMode: 0
     AlignToCamera: 0
     DistanceFromCamera: 35
-    ActivationRadius: 250
+    ActivationRadius: 50
     UseRawLocation: 0
-    DeactivateOnLeave: 0
-    Reactivate: 0
-    DeactivationRadius: 250
+    DeactivateOnLeave: 1
+    Reactivate: 1
+    DeactivationRadius: 50
     Id: 0
   DebugMode: 0
   OnHotspotActivated:
@@ -743,7 +742,7 @@ GameObject:
   - component: {fileID: 2046553109}
   - component: {fileID: 2046553108}
   m_Layer: 0
-  m_Name: GPS Hotspot Object
+  m_Name: Hotspot Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -764,15 +763,15 @@ MonoBehaviour:
   LocationSettings:
     LocationInput:
       LocationInputType: 0
-      LocationData: {fileID: 11400000, guid: cadc5d9fc6d4ea54390859f890881126, type: 2}
+      LocationData: {fileID: 11400000, guid: 66340ec8e5ef2994c97b11c2290c0054, type: 2}
       Location:
-        Latitude: 33.4536
-        Longitude: 126.5724
+        Latitude: 33.4558
+        Longitude: 126.572441
         Altitude: 0
-        AltitudeMode: 0
+        AltitudeMode: 1
         Label: 
       OverrideAltitudeData:
-        OverrideAltitude: 1
+        OverrideAltitude: 0
         Altitude: 0
         AltitudeMode: 0
   HotspotSettings:
@@ -781,11 +780,11 @@ MonoBehaviour:
     PositionMode: 0
     AlignToCamera: 0
     DistanceFromCamera: 2
-    ActivationRadius: 2
+    ActivationRadius: 200
     UseRawLocation: 0
     DeactivateOnLeave: 0
     Reactivate: 0
-    DeactivationRadius: 4
+    DeactivationRadius: 200
     Id: 0
   DebugMode: 0
   OnHotspotActivated:

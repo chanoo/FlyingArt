@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: JDC Mart Center
   m_EditorClassIdentifier: 
   Location:
-    Latitude: 33.45460128
-    Longitude: 126.57273864
-    Altitude: 360.6983
+    Latitude: 33.45465
+    Longitude: 126.572726
+    Altitude: 357
     AltitudeMode: 2
     Label: 

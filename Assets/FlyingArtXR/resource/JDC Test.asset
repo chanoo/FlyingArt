@@ -16,5 +16,5 @@ MonoBehaviour:
     Latitude: 33.453833
     Longitude: 126.57215
     Altitude: 383.871337
-    AltitudeMode: 2
+    AltitudeMode: 1
     Label: 

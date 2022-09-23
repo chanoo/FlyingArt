@@ -12,6 +12,7 @@ public class selectPoseDriver : MonoBehaviour
 #if UNITY_EDITOR
         this.gameObject.AddComponent<ARPoseDriver>();
 #elif PLATFORM_ANDROID
+        this.gameObject.AddComponent<TrackedPoseDriver>();
         GetComponent<TrackedPoseDriver>().SetPoseSource(TrackedPoseDriver.DeviceType.GenericXRDevice,TrackedPoseDriver.TrackedPose.ColorCamera);
 #endif
 

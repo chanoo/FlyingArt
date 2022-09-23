@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using ARLocation;
 
 public class Time_Ininitalize : MonoBehaviour
 {
@@ -12,8 +13,10 @@ public class Time_Ininitalize : MonoBehaviour
 
     public GameObject Warning;
 
-    public TMPro.TextMeshProUGUI current_hours, current_minutes, current_seconds;
+    public TextMeshProUGUI current_hours, current_minutes, current_seconds;
 
+    public Hotspot[] hotspots;
+    public TextMeshProUGUI heightValue;
 
     [HideInInspector]
     public int data_hours;
@@ -29,6 +32,7 @@ public class Time_Ininitalize : MonoBehaviour
 
     private void Awake()
     {
+
         if (Warning != null)
             Warning.gameObject.SetActive(false);
 
@@ -147,6 +151,32 @@ public class Time_Ininitalize : MonoBehaviour
         GameObject day = GameObject.Find("-Env Settings--dayLight");
         day.transform.GetChild(0).gameObject.SetActive(!day.transform.GetChild(0).gameObject.activeSelf);
 
+    }
+    public void ReScan()
+    {
+        foreach (var item in hotspots)
+        {
+            item.Restart();
+        }
+    }
+
+    int currentIndex = 0;
+     bool isFirstLoop = true;
+    public void ChangeHotspot()
+    {
+
+        if (currentIndex >= hotspots.Length - 1) currentIndex = 0;
+        else currentIndex += 1;
+
+        if (isFirstLoop)
+            hotspots[0].gameObject.SetActive(false);
+        for (int i = 0; i < hotspots.Length; i++)
+        {
+            if (i == currentIndex) hotspots[i].gameObject.SetActive(true);
+            else hotspots[i].gameObject.SetActive(false);
+        }
+
+        isFirstLoop = false;
     }
 
 }
