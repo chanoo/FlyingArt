@@ -2217,7 +2217,7 @@ MonoBehaviour:
   LocationSettings:
     LocationInput:
       LocationInputType: 1
-      LocationData: {fileID: 11400000, guid: bf271cecb3bd8554eb2d2bd8176ee008, type: 2}
+      LocationData: {fileID: 11400000, guid: 66340ec8e5ef2994c97b11c2290c0054, type: 2}
       Location:
         Latitude: 33.45355
         Longitude: 126.572441
@@ -2229,8 +2229,7 @@ MonoBehaviour:
         Altitude: 359
         AltitudeMode: 0
   HotspotSettings:
-    Prefab: {fileID: 2217168784691342443, guid: 523b2e6a21a50204f94396a4a4fbc786,
-      type: 3}
+    Prefab: {fileID: 283599293516234167, guid: 0c6d940067d61a3449e03e52e0b9d3e2, type: 3}
     PositionMode: 0
     AlignToCamera: 0
     DistanceFromCamera: 0
@@ -5822,6 +5821,7 @@ GameObject:
   - component: {fileID: 1331527614}
   - component: {fileID: 1331527613}
   - component: {fileID: 1331527615}
+  - component: {fileID: 1331527616}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -5872,6 +5872,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 0}
   m_DetectionMode: -1
+--- !u!114 &1331527616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331527612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AnchorPrefab: {fileID: 0}
 --- !u!1 &1339575637
 GameObject:
   m_ObjectHideFlags: 0

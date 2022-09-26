@@ -402,7 +402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2146857608
 GameObject:
@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 2146857611}
   - component: {fileID: 2146857610}
   - component: {fileID: 2146857609}
+  - component: {fileID: 2146857612}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -434,11 +435,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dea56a9eaadd1c439095de4f9a371cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SerializedLibrary: {fileID: 11400000, guid: b62773e9b73d2d04c8c6df43065d1f91,
+  m_SerializedLibrary: {fileID: 11400000, guid: 4f056d1f83344fc41817a1cac95f260f,
     type: 2}
-  m_MaxNumberOfMovingImages: 4
-  m_TrackedImagePrefab: {fileID: 7744966818132003280, guid: a25f9aaf04996c64fb336ef9d54e7de6,
-    type: 3}
+  m_MaxNumberOfMovingImages: 10
+  m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &2146857610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,5 +465,28 @@ Transform:
   m_Children:
   - {fileID: 353751963}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146857612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146857608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f35ce96c10bd3c44a22275564eb2faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeablePrefabs:
+  - {fileID: 1379542495596463904, guid: 6cec896935642c346bdf3ee20cd9c8eb, type: 3}
+  - {fileID: 3328068934186831684, guid: 61fc0eb4df4b55448b3c5a2422e830ff, type: 3}
+  - {fileID: 2364796532055091410, guid: e62fe5c53a31be54a8906c33890915e5, type: 3}
+  - {fileID: 6124625699423089927, guid: 8e1e3b03553aa514dbee581a34fb22c9, type: 3}
+  - {fileID: 1874029605194762377, guid: 5893a776abcf7bf459ee4a8ff6dc96aa, type: 3}
+  - {fileID: 2442451874389781053, guid: 4d9b22c2c982d0b4b8c08cedeef14407, type: 3}
+  - {fileID: 7744966818132003280, guid: a25f9aaf04996c64fb336ef9d54e7de6, type: 3}
+  - {fileID: 5984585885636495057, guid: 952ded4bbeb478f4bbc8882f30980e2e, type: 3}
+  - {fileID: 157166060118686402, guid: 14ee6f03b31848b409485d9352e9f44e, type: 3}
+  - {fileID: 5206758551653213630, guid: 21cce35f4c628dd499f965f1c74f3f9c, type: 3}

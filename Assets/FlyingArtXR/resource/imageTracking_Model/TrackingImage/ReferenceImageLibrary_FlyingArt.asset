@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary_FlyingArt
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5090088968332445197
+  m_GuidHigh: 14657672272278397878
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5047148651295280410
+      m_GuidHigh: 673728295174663814
+    m_SerializedTextureGuid:
+      m_GuidLow: 7058543096322067814
+      m_GuidHigh: 6411641555345128248
+    m_Size: {x: 3, y: 2.992891}
+    m_SpecifySize: 1
+    m_Name: PF_Bat
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5425870109246192101
+      m_GuidHigh: 4240051712648272001
+    m_SerializedTextureGuid:
+      m_GuidLow: 7968080154849083780
+      m_GuidHigh: 4597527939581308201
+    m_Size: {x: 3, y: 2.992891}
+    m_SpecifySize: 1
+    m_Name: PF_BIBARI
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5610827604258166349
+      m_GuidHigh: 5983334753600358814
+    m_SerializedTextureGuid:
+      m_GuidLow: 3311375808187025225
+      m_GuidHigh: 18059789316776322457
+    m_Size: {x: 3, y: 3.0071259}
+    m_SpecifySize: 1
+    m_Name: PF_blanchardi
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4645527952096838066
+      m_GuidHigh: 9604876966198851969
+    m_SerializedTextureGuid:
+      m_GuidLow: 8540065200681379994
+      m_GuidHigh: 13577610030118472361
+    m_Size: {x: 3, y: 2.992891}
+    m_SpecifySize: 1
+    m_Name: PF_Boar
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5326317495624049920
+      m_GuidHigh: 16332167264278344099
+    m_SerializedTextureGuid:
+      m_GuidLow: 14291211102359848946
+      m_GuidHigh: 14450043530872208808
+    m_Size: {x: 3, y: 2.992891}
+    m_SpecifySize: 1
+    m_Name: PF_butterfly
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4656685499392920206
+      m_GuidHigh: 3021182453756233866
+    m_SerializedTextureGuid:
+      m_GuidLow: 9103097909157252337
+      m_GuidHigh: 16985773976391687611
+    m_Size: {x: 3, y: 3}
+    m_SpecifySize: 1
+    m_Name: PF_egret
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4916142493762412507
+      m_GuidHigh: 17005035519181086359
+    m_SerializedTextureGuid:
+      m_GuidLow: 12624917424018827110
+      m_GuidHigh: 13044483734181957576
+    m_Size: {x: 3, y: 3.060287}
+    m_SpecifySize: 1
+    m_Name: PF_golden_eagle
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5092033844310494287
+      m_GuidHigh: 15965827487392600713
+    m_SerializedTextureGuid:
+      m_GuidLow: 8580528610157818693
+      m_GuidHigh: 7499162702636111130
+    m_Size: {x: 3, y: 3}
+    m_SpecifySize: 1
+    m_Name: PF_noru
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5733051138661765568
+      m_GuidHigh: 5091231754160078993
+    m_SerializedTextureGuid:
+      m_GuidLow: 15655918907295962345
+      m_GuidHigh: 12854676602890621530
+    m_Size: {x: 3, y: 3}
+    m_SpecifySize: 1
+    m_Name: PF_otus
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5380469573459128716
+      m_GuidHigh: 8450820152848061855
+    m_SerializedTextureGuid:
+      m_GuidLow: 16840148492187571048
+      m_GuidHigh: 6135731118763540361
+    m_Size: {x: 3, y: 3}
+    m_SpecifySize: 1
+    m_Name: PF_PITA
+    m_Texture: {fileID: 0}
