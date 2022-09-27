@@ -192,9 +192,9 @@ GameObject:
   m_Component:
   - component: {fileID: 18734956}
   - component: {fileID: 18734952}
-  - component: {fileID: 18734955}
   - component: {fileID: 18734954}
   - component: {fileID: 18734953}
+  - component: {fileID: 18734955}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -226,7 +226,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 20
+  far clip plane: 200
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -285,15 +285,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 18734951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e3c44306fb1e439a9f18b2212b8ab70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Device: 0
-  m_PoseSource: 6
-  m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
-  m_UpdateType: 0
-  m_UseRelativeTransform: 1
 --- !u!4 &18734956
 Transform:
   m_ObjectHideFlags: 0
@@ -493,13 +487,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LocationSettings:
     LocationInput:
-      LocationInputType: 1
+      LocationInputType: 0
       LocationData: {fileID: 11400000, guid: 66340ec8e5ef2994c97b11c2290c0054, type: 2}
       Location:
-        Latitude: 33.45358
+        Latitude: 33.4539
         Longitude: 126.572441
         Altitude: 0
-        AltitudeMode: 0
+        AltitudeMode: 1
         Label: 
       OverrideAltitudeData:
         OverrideAltitude: 0
@@ -545,7 +539,7 @@ LightingSettings:
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
   serializedVersion: 3
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 1
   m_RealtimeEnvironmentLighting: 1
@@ -765,7 +759,7 @@ MonoBehaviour:
       LocationInputType: 0
       LocationData: {fileID: 11400000, guid: 66340ec8e5ef2994c97b11c2290c0054, type: 2}
       Location:
-        Latitude: 33.4558
+        Latitude: 33.4535
         Longitude: 126.572441
         Altitude: 0
         AltitudeMode: 1

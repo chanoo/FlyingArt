@@ -2217,7 +2217,7 @@ MonoBehaviour:
   LocationSettings:
     LocationInput:
       LocationInputType: 1
-      LocationData: {fileID: 11400000, guid: 66340ec8e5ef2994c97b11c2290c0054, type: 2}
+      LocationData: {fileID: 11400000, guid: bf271cecb3bd8554eb2d2bd8176ee008, type: 2}
       Location:
         Latitude: 33.45355
         Longitude: 126.572441
@@ -2225,19 +2225,20 @@ MonoBehaviour:
         AltitudeMode: 1
         Label: 
       OverrideAltitudeData:
-        OverrideAltitude: 1
+        OverrideAltitude: 0
         Altitude: 359
         AltitudeMode: 0
   HotspotSettings:
-    Prefab: {fileID: 283599293516234167, guid: 0c6d940067d61a3449e03e52e0b9d3e2, type: 3}
+    Prefab: {fileID: 2217168784691342443, guid: 523b2e6a21a50204f94396a4a4fbc786,
+      type: 3}
     PositionMode: 0
     AlignToCamera: 0
     DistanceFromCamera: 0
-    ActivationRadius: 150
+    ActivationRadius: 200
     UseRawLocation: 1
     DeactivateOnLeave: 1
     Reactivate: 1
-    DeactivationRadius: 150
+    DeactivationRadius: 200
     Id: 0
   DebugMode: 0
   OnHotspotActivated:
@@ -3155,10 +3156,6 @@ MonoBehaviour:
   current_seconds: {fileID: 902037276}
   hotspots:
   - {fileID: 479186018}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   heightValue: {fileID: 0}
   data_hours: 0
   data_minutes: 0

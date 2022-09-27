@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
+using UnityEngine.SceneManagement;
 
 public class multiImageTracker : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class multiImageTracker : MonoBehaviour
     private GameObject[] placeablePrefabs;
 
     private Dictionary<string, GameObject> spawnedObjects;
+
+    private TrackingState tracking;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -47,7 +51,9 @@ public class multiImageTracker : MonoBehaviour
         }
         foreach (ARTrackedImage trackedImage in eventArgs.removed)
         {
-            spawnedObjects[trackedImage.name].SetActive(false);
+            print("trackedimage name = "+trackedImage.name);
+            print("trackedimage reference name = " + trackedImage.referenceImage.name);
+            spawnedObjects[trackedImage.referenceImage.name].SetActive(false);
         }
     }
 
@@ -58,6 +64,26 @@ public class multiImageTracker : MonoBehaviour
         spawnedObjects[referenceImageName].transform.position = trackedImage.transform.position;
         spawnedObjects[referenceImageName].transform.rotation = trackedImage.transform.rotation;
         spawnedObjects[referenceImageName].SetActive(true);
+        foreach (GameObject go in spawnedObjects.Values)
+        {
+            Debug.Log($"Go in arObjects.Values: {go.name}");
+            if (go.name != referenceImageName)
+            {
+                go.SetActive(false);
+            }
+        }
     }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+    }
+
+    public void resetARSession()
+    {
+        ARSession session = FindObjectOfType<ARSession>();
+        session.Reset();
+    }
+
 
 }

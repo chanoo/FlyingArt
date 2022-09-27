@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GuidLow: 5090088968332445197
   m_GuidHigh: 14657672272278397878
+  m_DataStore:
+    m_Storage: []
   m_Images:
   - m_SerializedGuid:
       m_GuidLow: 5047148651295280410
@@ -61,7 +63,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 14291211102359848946
       m_GuidHigh: 14450043530872208808
-    m_Size: {x: 3, y: 2.992891}
+    m_Size: {x: 4, y: 3.9905214}
     m_SpecifySize: 1
     m_Name: PF_butterfly
     m_Texture: {fileID: 0}
@@ -71,7 +73,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 9103097909157252337
       m_GuidHigh: 16985773976391687611
-    m_Size: {x: 3, y: 3}
+    m_Size: {x: 2, y: 2}
     m_SpecifySize: 1
     m_Name: PF_egret
     m_Texture: {fileID: 0}
@@ -111,7 +113,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 16840148492187571048
       m_GuidHigh: 6135731118763540361
-    m_Size: {x: 3, y: 3}
+    m_Size: {x: 2, y: 2}
     m_SpecifySize: 1
     m_Name: PF_PITA
     m_Texture: {fileID: 0}
