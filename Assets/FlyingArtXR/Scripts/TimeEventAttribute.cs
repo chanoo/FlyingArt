@@ -7,6 +7,7 @@ using UnityEngine;
 public class TimeEventAttribute : MonoBehaviour
 {
 
+
     [Header("시작타임설정")]
     public int hours;
     public int minutes;
@@ -62,9 +63,22 @@ public class TimeEventAttribute : MonoBehaviour
         //    secondForEvent = seconds + (minutes * 60) + (hours * 60 * 60) + TcTime + (int)sT.totalGameSeconds;
         //    secondForEndEvent = secondForEvent + (DueMinute * 60) + DueSecond;
         //}
+        else if(tc.standard == StandardTimeEvent.system)
+        {
+            print("system mode");
+            //int data_hours = PlayerPrefs.GetInt("savedHours");
+            //int data_minutes = PlayerPrefs.GetInt("savedMinutes");
+            //int data_seconds = PlayerPrefs.GetInt("savedSeconds");
+
+            //int data_totalSecond = data_seconds + (data_minutes * 60) + (data_hours * 60 * 60);
+
+            int data_totalSecond = tc.es_seconds + (tc.es_minutes * 60) + (tc.es_hours * 60 * 60);
+            secondForEvent = (seconds + (minutes * 60) + (hours * 60 * 60)) + data_totalSecond;
+            secondForEndEvent = secondForEvent + (DueMinute * 60) + DueSecond;
+        }
         else
         {
-            print("systemp");
+            print("specify mode");
             secondForEvent += seconds + (minutes * 60) + (hours * 60 * 60);
             secondForEndEvent = secondForEvent + (DueMinute * 60) + DueSecond;
         }

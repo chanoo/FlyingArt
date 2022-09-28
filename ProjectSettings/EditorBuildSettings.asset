@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/FlyingArtXR/SceneForMakeContents/FlyingArt InsertScene.unity
     guid: 98acab7dfb9aa5f49b4498e0da3adc9a
-  - enabled: 0
+  - enabled: 1
     path: Assets/FlyingArtXR/SceneForMakeContents/JDCMartCenter_GPS_Test.unity
     guid: cc0af5638df4c0e47b7cb8f9c34275ad
-  - enabled: 1
+  - enabled: 0
     path: Assets/FlyingArtXR/Main.unity
     guid: 4e8b0d90b3bcd364c9c9537a497cf820
-  - enabled: 1
+  - enabled: 0
     path: Assets/FlyingArtXR/show.unity
     guid: 0f39cd92813f16c47b69c7dc0d90597e
-  - enabled: 1
+  - enabled: 0
     path: Assets/FlyingArtXR/xrGallery.unity
     guid: 40ca88753dbe1184b801423cd076e63a
   m_configObjects:

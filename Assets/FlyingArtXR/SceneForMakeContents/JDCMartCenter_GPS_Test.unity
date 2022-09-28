@@ -2998,7 +2998,8 @@ MonoBehaviour:
         Altitude: 359
         AltitudeMode: 2
   HotspotSettings:
-    Prefab: {fileID: 283599293516234167, guid: 0c6d940067d61a3449e03e52e0b9d3e2, type: 3}
+    Prefab: {fileID: 2217168784691342443, guid: 523b2e6a21a50204f94396a4a4fbc786,
+      type: 3}
     PositionMode: 0
     AlignToCamera: 0
     DistanceFromCamera: 0
@@ -10602,36 +10603,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490149943}
   m_CullTransparentMesh: 1
---- !u!1 &1501700782
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1501700783}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1501700783
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501700782}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 21, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513685104
 GameObject:
   m_ObjectHideFlags: 0
@@ -19660,6 +19631,9 @@ MonoBehaviour:
   totalCurrentSeconds: 0
   firstEventTime: 0
   finalEventTime: 0
+  es_hours: 0
+  es_minutes: 0
+  es_seconds: 0
 --- !u!224 &283599294023884328
 RectTransform:
   m_ObjectHideFlags: 0

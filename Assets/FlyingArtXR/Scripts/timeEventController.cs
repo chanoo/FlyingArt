@@ -57,7 +57,9 @@ public class timeEventController : MonoBehaviour
     //이벤트최초시간과 마지막시간
     public int firstEventTime;
     public int finalEventTime;
-
+    //드론쇼 시작 시간
+    [Header("이벤트시작시간")]
+    public int es_hours, es_minutes, es_seconds;
     //public bool isShowing = false;
 
     private void Awake()
