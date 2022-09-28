@@ -5,7 +5,8 @@
 [Bb]uild/
 [Bb]uilds/
 [Uu]serSettings/
-[Aa]ssets/FlyingArtXR/resource/.Pablo_Resorce
+[Aa]ssets/FlyingArtXR/resource/.Pablo_Resorce/
+Packages/
 Assets/AssetStoreTools*
 Packages/packages-lock.json
 
@@ -47,3 +48,7 @@ sysinfo.txt
 
 .DS_Store
 ARFoundationRemoteInstaller
+Packages/manifest.json
+*.json
+Packages/manifest.json
+Packages/manifest.json
