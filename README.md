@@ -1,3 +1,16 @@
+#에디터 디버깅툴이 필요하시면
+프로젝트폴더 상위에 AR Foundation Remote 20.rar 를 풀어서 패키지 설치하시면 됩니다.
+#최종사용될 씬은 main,show,xrgallery 이며
+폴더SceneForMakeContents안의 씬들은 컨텐츠를 만들기 위한 템프씬입니다.
+시간단위의 작업을 확인하며 작업하기 위한 것들이며 flyingart inserScene에서 시간 기준을 시스템,지정된시간,하이브리드를 정하게 되어있고 캐쉬에 남아있기에 
+최종사용되는 컨텐츠의 시간타임이 맞지 않으면 이 씬을 열어서 바꿔주세요.
+
+
+개발자분에게 
+show씬에서 불어오게 되는 hotspot 로케이션 정보를 웹에서 json 파일 파싱으로 위,경도를 받아오도록 만들어 주세요.-gps좌표가 확정이 아니라 현장에서 웹으로 접속해서 조정하기 위함.
+show씬에서(드론합동공연컨텐츠)는 FlyingArtXR/prefabs 안에 있는 TimeEvent  Controller_new 입니다.
+
+
 # AR Foundation Samples
 
 Example projects that use [*AR Foundation 4.1*](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.1/manual/index.html) and demonstrate its functionality with sample assets and components.
