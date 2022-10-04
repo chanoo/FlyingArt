@@ -38,7 +38,7 @@ public class UI_Action : MonoBehaviour
         bt_event.onClick.AddListener(PressEvent);
         bt_home.onClick.AddListener(PressHome);
         bt_tour.onClick.AddListener(PressTour);
-        bt_create.onClick.AddListener(PressCreate);
+    bt_create.onClick.AddListener(PressCreate);
     }
 
     // Update is called once per frame
