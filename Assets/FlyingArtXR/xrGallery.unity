@@ -675,8 +675,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2146857612}
         m_TargetAssemblyTypeName: multiImageTracker, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: resetARSession
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 50074166ee25199428686a0a9faef7a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 86c9eda2ba7f8b64791c9de68042d7bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -759,7 +759,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -40, y: 60}
-  m_SizeDelta: {x: 120, y: 120}
+  m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1668358466
 MonoBehaviour:
@@ -814,9 +814,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: xrGallery
+          m_StringArgument: Main
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
       - m_Target: {fileID: 2146857612}
         m_TargetAssemblyTypeName: multiImageTracker, Assembly-CSharp
         m_MethodName: resetARSession
@@ -828,7 +828,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1668358467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f3747be9c2afeb4da0e4dc53935fb26, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2a5b42fa6a83c94da14891cf81c97f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

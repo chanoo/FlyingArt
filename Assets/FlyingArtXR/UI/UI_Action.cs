@@ -6,7 +6,7 @@ using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 public class UI_Action : MonoBehaviour
 {
-    public Button bt_show, bt_event, bt_home, bt_tour, bt_create;
+    public Button bt_show, bt_event, bt_home, bt_tour, bt_create,bt_exit;
 
     private VideoPlayer vid;
     public VideoClip[] myclip;
@@ -39,6 +39,7 @@ public class UI_Action : MonoBehaviour
         bt_home.onClick.AddListener(PressHome);
         bt_tour.onClick.AddListener(PressTour);
     bt_create.onClick.AddListener(PressCreate);
+    bt_exit.onClick.AddListener(PressExit);
     }
 
     // Update is called once per frame
@@ -110,6 +111,12 @@ public class UI_Action : MonoBehaviour
                 screenList[i].SetActive(false);
         }
         print("create");
+
+    }
+    void PressExit()
+    {
+        Debug.Log("게임종료");
+        Application.Quit();
 
     }
 
