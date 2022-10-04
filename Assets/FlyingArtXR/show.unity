@@ -421,7 +421,7 @@ MonoBehaviour:
     Reactivate: 1
     DeactivationRadius: 200
     Id: 0
-  DebugMode: 0
+  DebugMode: 1
   OnHotspotActivated:
     m_PersistentCalls:
       m_Calls: []

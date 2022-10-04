@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+
 using UnityEngine;
-
-
 
 
 [Serializable]
@@ -62,6 +64,11 @@ public class timeEventController : MonoBehaviour
     public int es_hours, es_minutes, es_seconds;
     //public bool isShowing = false;
 
+    private TcpClient socketConnection;
+    private Thread clientReceiveThread;
+    public string serverIp = "flyingart-server.8hlab.com";
+    string serverMessage;
+
     private void Awake()
     {
         savedTimeData = PlayerPrefs.GetInt("timeStandard");
@@ -112,15 +119,80 @@ public class timeEventController : MonoBehaviour
         approximationTime(eventList.ToArray());
 
     }
-
-
     private void Start()
     {
-
+        ConnectToTcpServer();
     }
+    private void ConnectToTcpServer()
+    {
+        try
+        {
+            clientReceiveThread = new Thread(new ThreadStart(ListenForData));
+            clientReceiveThread.IsBackground = true;
+            clientReceiveThread.Start();
+        }
+        catch (Exception e)
+        {
+            Debug.Log("On client connect exception " + e);
+        }
+    }
+
+    private void ListenForData()
+    {
+        try
+        {
+            socketConnection = new TcpClient(this.serverIp, 8090);
+            Byte[] bytes = new Byte[1024];
+            while (true)
+            {
+                // Get a stream object for reading 				
+                using (NetworkStream stream = socketConnection.GetStream())
+                {
+                    int length;
+                    // Read incomming stream into byte arrary. 					
+                    while ((length = stream.Read(bytes, 0, bytes.Length)) != 0)
+                    {
+                        var incommingData = new byte[length];
+                        Array.Copy(bytes, 0, incommingData, 0, length);
+                        // Convert byte array to string message. 						
+                        serverMessage = Encoding.ASCII.GetString(incommingData);
+                        Debug.Log("server message received as: " + serverMessage);
+                    }
+                }
+            }
+        }
+        catch (SocketException socketException)
+        {
+            Debug.Log("Socket exception: " + socketException);
+        }
+    }
+
 
     private void Update()
     {
+        if ("PLAY".Equals(serverMessage))
+        {
+            for (int i = 0; i < eventList.Count; i++)
+            {
+                var name = eventList[i].eventPrefab.name;
+                if ("TimeEvent  Controller_new".Equals(name))
+                {
+                    eventList[i].eventPrefab.SetActive(true);
+                }
+            }
+        }
+
+        if ("STOP".Equals(serverMessage))
+        {
+            for (int i = 0; i < eventList.Count; i++)
+            {
+                var name = eventList[i].eventPrefab.name;
+                if ("TimeEvent  Controller_new".Equals(name))
+                {
+                    eventList[i].eventPrefab.SetActive(false);
+                }
+            }
+        }
 
         //interval 마다 이벤트 체크..
         if (Time.time >= nextTime)

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BOROMWAT
   m_EditorClassIdentifier: 
   Location:
-    Latitude: 33.414249
-    Longitude: 126.753623
-    Altitude: 267.9546
+    Latitude: 37.16335
+    Longitude: 127.0989
+    Altitude: 200
     AltitudeMode: 0
     Label: 
