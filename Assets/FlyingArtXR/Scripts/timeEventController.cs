@@ -130,19 +130,22 @@ public class timeEventController : MonoBehaviour
             nextTime += interval;
 
         }
+        //이벤트시작종료안내 택스트//
+        //if(temp_nextEvent == null)
+        //{
+        //    if (totalCurrentSeconds < firstEventTime) GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(true);
+        //    else GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(false);
 
-        if(temp_nextEvent == null)
-        {
-            if (totalCurrentSeconds < firstEventTime) GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(true);
-            else GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(false);
+        //    if (totalCurrentSeconds > finalEventTime) GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(true);
+        //    else GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(false);
 
-            if (totalCurrentSeconds > finalEventTime) GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(true);
-            else GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(false);
-
-        }
+        //}
 
         if (temp_nextEvent != null)
         {
+             //GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(false);
+             //GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(false);
+
 
             if (totalCurrentSeconds > nextEventTime && totalCurrentSeconds < endEvevtTime && !temp_nextEvent.eventPrefab.activeSelf)
             {
