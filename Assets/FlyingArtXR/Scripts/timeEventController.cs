@@ -92,8 +92,12 @@ public class timeEventController : MonoBehaviour
             }
         if (standard==StandardTimeEvent.hybrid)
         {
+            totalCurrentSeconds = 0;
 
         }
+
+
+        totalCurrentSeconds = 0;
 
         //sT = this.GetComponent<SpecifyTime>();
         sT = GameObject.FindObjectOfType<SpecifyTime>();
@@ -156,6 +160,17 @@ public class timeEventController : MonoBehaviour
                         Array.Copy(bytes, 0, incommingData, 0, length);
                         // Convert byte array to string message. 						
                         serverMessage = Encoding.ASCII.GetString(incommingData);
+
+                        if ("PLAY".Equals(serverMessage))
+                        {
+                            totalCurrentSeconds = 0;
+                        }
+
+                        if ("STOP".Equals(serverMessage))
+                        {
+                            totalCurrentSeconds = 60 * 60 * 12;
+                        }
+
                         Debug.Log("server message received as: " + serverMessage);
                     }
                 }
@@ -170,30 +185,6 @@ public class timeEventController : MonoBehaviour
 
     private void Update()
     {
-        if ("PLAY".Equals(serverMessage))
-        {
-            for (int i = 0; i < eventList.Count; i++)
-            {
-                var name = eventList[i].eventPrefab.name;
-                if ("TimeEvent  Controller_new".Equals(name))
-                {
-                    eventList[i].eventPrefab.SetActive(true);
-                }
-            }
-        }
-
-        if ("STOP".Equals(serverMessage))
-        {
-            for (int i = 0; i < eventList.Count; i++)
-            {
-                var name = eventList[i].eventPrefab.name;
-                if ("TimeEvent  Controller_new".Equals(name))
-                {
-                    eventList[i].eventPrefab.SetActive(false);
-                }
-            }
-        }
-
         //interval 마다 이벤트 체크..
         if (Time.time >= nextTime)
         {
