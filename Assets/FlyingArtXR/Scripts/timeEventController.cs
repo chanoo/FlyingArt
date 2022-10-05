@@ -29,38 +29,38 @@ public class timeEventController : MonoBehaviour
     //public currentTime cT;
     private SpecifyTime sT;
 
-    [Tooltip("ÇöÀç±âÁØÀÎÁö ¾Ë¶÷±âÁØÀÎÁö ¼±ÅÃ")]
+    [Tooltip("í˜„ì¬ê¸°ì¤€ì¸ì§€ ì•ŒëŒê¸°ì¤€ì¸ì§€ ì„ íƒ")]
     public StandardTimeEvent standard = StandardTimeEvent.system;
 
-    //½Ã½ºÅÛ ³¯Â¥ ¹Ş¾Æ¿À¸é¼­ 0½Ã0ºĞ0ÃÊ·Î ÃÊ±âÈ­
+    //ì‹œìŠ¤í…œ ë‚ ì§œ ë°›ì•„ì˜¤ë©´ì„œ 0ì‹œ0ë¶„0ì´ˆë¡œ ì´ˆê¸°í™”
     private DateTime TimeStandard = DateTime.Today;
     private int nextEventTime;
     private int endEvevtTime, min = int.MaxValue;
 
-    //ÀÌº¥Æ® »ı¼º ½Ã°£ ¸®½ºÆ®
+    //ì´ë²¤íŠ¸ ìƒì„± ì‹œê°„ ë¦¬ìŠ¤íŠ¸
     public List<TimeEventAttribute> eventList = new List<TimeEventAttribute>();
-    //´ÙÀ½ÀÌº¥Æ®
+    //ë‹¤ìŒì´ë²¤íŠ¸
     public TimeEventAttribute temp_nextEvent;
     public List<ParticleSystem> par;
     private ParticleSystem.Particle[] m_Particles;
     private bool IsKillParticle = false;
 
 
-    [Tooltip("È­¸é¿¡ ½Ã°£ Ç¥½Ã")]
+    [Tooltip("í™”ë©´ì— ì‹œê°„ í‘œì‹œ")]
     public bool isGuiDebug = false;
-    [Tooltip("ÀÌº¥Æ® Ã¼Å© Å¸ÀÓ")]
+    [Tooltip("ì´ë²¤íŠ¸ ì²´í¬ íƒ€ì„")]
     public float interval = 0.25f;
     [HideInInspector]
     public int totalCurrentSeconds;
-    //ÀÓÀÇÀÇ º¯¼ö
+    //ì„ì˜ì˜ ë³€ìˆ˜
     private float nextTime = 0;
     private int savedTimeData;
 
-    //ÀÌº¥Æ®ÃÖÃÊ½Ã°£°ú ¸¶Áö¸·½Ã°£
+    //ì´ë²¤íŠ¸ìµœì´ˆì‹œê°„ê³¼ ë§ˆì§€ë§‰ì‹œê°„
     public int firstEventTime;
     public int finalEventTime;
-    //µå·Ğ¼î ½ÃÀÛ ½Ã°£
-    [Header("ÀÌº¥Æ®½ÃÀÛ½Ã°£")]
+    //ë“œë¡ ì‡¼ ì‹œì‘ ì‹œê°„
+    [Header("ì´ë²¤íŠ¸ì‹œì‘ì‹œê°„")]
     public int es_hours, es_minutes, es_seconds;
     //public bool isShowing = false;
 
@@ -78,15 +78,15 @@ public class timeEventController : MonoBehaviour
             {
                 case 0:
                     standard = StandardTimeEvent.system;
-                    print($"½Ã°£±âÁØÀº = " + standard);
+                    print($"ì‹œê°„ê¸°ì¤€ì€ = " + standard);
                     break;
                 case 1:
                     standard = StandardTimeEvent.specified;
-                    print($"½Ã°£±âÁØÀº = " + standard);
+                    print($"ì‹œê°„ê¸°ì¤€ì€ = " + standard);
                     break;
                 case 2:
                     standard = StandardTimeEvent.hybrid;
-                    print($"½Ã°£±âÁØÀº = " + standard);
+                    print($"ì‹œê°„ê¸°ì¤€ì€ = " + standard);
                     break;
                 default:
                     standard = StandardTimeEvent.system;
@@ -104,7 +104,7 @@ public class timeEventController : MonoBehaviour
         //sT = this.GetComponent<SpecifyTime>();
         sT = GameObject.FindObjectOfType<SpecifyTime>();
 
-        //Å¸ÀÌ¸ÓÀÌº¥Æ®¸®½ºÆ®»ı¼º
+        //íƒ€ì´ë¨¸ì´ë²¤íŠ¸ë¦¬ìŠ¤íŠ¸ìƒì„±
         //eventList.AddRange(GameObject.FindObjectsOfType<TimeEventAttribute>());
         eventList.AddRange(this.GetComponentsInChildren<TimeEventAttribute>());
 
@@ -112,14 +112,14 @@ public class timeEventController : MonoBehaviour
     }
     private void OnEnable()
     {
-        //ÀÏ´Ü¿ÀºêÁ§Æ® ¼û±â±â
+        //ì¼ë‹¨ì˜¤ë¸Œì íŠ¸ ìˆ¨ê¸°ê¸°
         for (int i = 0; i < eventList.Count; i++)
         {
             eventList[i].eventPrefab.SetActive(false);
         }
 
 
-        //±â°£±âÁØ°¡Á®¿À±â
+        //ê¸°ê°„ê¸°ì¤€ê°€ì ¸ì˜¤ê¸°
         currentTime();
 
         approximationTime(eventList.ToArray());
@@ -190,7 +190,7 @@ public class timeEventController : MonoBehaviour
 
     private void Update()
     {
-        //interval ¸¶´Ù ÀÌº¥Æ® Ã¼Å©..
+        //interval ë§ˆë‹¤ ì´ë²¤íŠ¸ ì²´í¬..
         if (Time.time >= nextTime)
         {
             currentTime();
@@ -198,28 +198,27 @@ public class timeEventController : MonoBehaviour
             nextTime += interval;
 
         }
-
-        /*
-        if(temp_nextEvent == null)
-        {
-            if (totalCurrentSeconds < firstEventTime) GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(true);
-            else GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(false);
-
-            if (totalCurrentSeconds > finalEventTime) GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(true);
-            else GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(false);
-
-        }
-        */
+        //ì´ë²¤íŠ¸ì‹œì‘ì¢…ë£Œì•ˆë‚´ íƒìŠ¤íŠ¸//
+        //if(temp_nextEvent == null)
+        //{
+        //    if (totalCurrentSeconds < firstEventTime) GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(true);
+        //    else GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(false);
+        //    if (totalCurrentSeconds > finalEventTime) GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(true);
+        //    else GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(false);
+        //}
 
         if (temp_nextEvent != null)
         {
+             //GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(false);
+             //GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(false);
+
 
             if (totalCurrentSeconds > nextEventTime && totalCurrentSeconds < endEvevtTime && !temp_nextEvent.eventPrefab.activeSelf)
             {
                 temp_nextEvent.eventPrefab.SetActive(true);
             }
             
-            //ÆÄÆ¼Å¬ ¼­¼­È÷ »ç¶óÁö°Ô ÇÏ±âÀ§ÇØ  3 ¸ÕÀú Ã³¸®.
+            //íŒŒí‹°í´ ì„œì„œíˆ ì‚¬ë¼ì§€ê²Œ í•˜ê¸°ìœ„í•´  3 ë¨¼ì € ì²˜ë¦¬.
             if (totalCurrentSeconds > endEvevtTime - 4 && temp_nextEvent.eventPrefab.activeSelf && par[0].particleCount > 1 && !IsKillParticle)
             {
                 if (par != null)
@@ -238,21 +237,21 @@ public class timeEventController : MonoBehaviour
 
 
     /// </summary>
-    /// <param name = "°¡±î¿î ÀÌº¥Æ®³ª ÁøÇàÁßÀÎ ÀÌº¥Æ® " ></ param >
+    /// <param name = "ê°€ê¹Œìš´ ì´ë²¤íŠ¸ë‚˜ ì§„í–‰ì¤‘ì¸ ì´ë²¤íŠ¸ " ></ param >
     private void approximationTime(TimeEventAttribute[] eventlist)
     {
         int eventlistT = 0;
         for (int i = 0; i < eventlist.Length; i++)
         {
             eventlistT = eventlist[i].secondForEvent;
-            //Debug.Log($"¸®½ºÆ®({eventlist[i].name})");
-            //Debug.Log($"ÇöÀç½Ã°£({totalCurrentSeconds})Àº ÀÌº¥Æ®½ÃÀÛ½Ã°£{eventlistT} º¸´Ù Å©´Ù´Â ºñ±³´Â{totalCurrentSeconds > eventlistT}");
+            //Debug.Log($"ë¦¬ìŠ¤íŠ¸({eventlist[i].name})");
+            //Debug.Log($"í˜„ì¬ì‹œê°„({totalCurrentSeconds})ì€ ì´ë²¤íŠ¸ì‹œì‘ì‹œê°„{eventlistT} ë³´ë‹¤ í¬ë‹¤ëŠ” ë¹„êµëŠ”{totalCurrentSeconds > eventlistT}");
             if (totalCurrentSeconds > eventlistT && totalCurrentSeconds < eventlist[i].secondForEndEvent)
             {
                 min = Mathf.Abs(eventlistT - totalCurrentSeconds);
-                //Debug.Log($"ÃÖ¼Ò°ªÀº {min}");
+                //Debug.Log($"ìµœì†Œê°’ì€ {min}");
                 temp_nextEvent = eventlist[i];
-                //Debug.Log("ÅÆÇÁ¿¡ ¸®½º´À(" + eventlist[i].name + ")¿¡ ³Ö±â");
+                //Debug.Log("íƒ¬í”„ì— ë¦¬ìŠ¤ëŠ(" + eventlist[i].name + ")ì— ë„£ê¸°");
                 nextEventTime = eventlistT;
                 endEvevtTime = eventlist[i].secondForEndEvent;
             }
@@ -291,7 +290,7 @@ public class timeEventController : MonoBehaviour
 
         }
     }
-    //ÆÄÆ¼Å¬ ¼ö°¡ 0ÀÌ¸é ¿ÀºêÁ§Æ®¸¦ ²ö´Ù.
+    //íŒŒí‹°í´ ìˆ˜ê°€ 0ì´ë©´ ì˜¤ë¸Œì íŠ¸ë¥¼ ëˆë‹¤.
     IEnumerator KillParticle(ParticleSystem m_system)
     {
 
@@ -373,17 +372,17 @@ public class timeEventController : MonoBehaviour
         if (isGuiDebug)
         {
             if (standard == StandardTimeEvent.specified)
-                GUI.Label(new Rect(100, 40, 200, 40), "¼³Á¤µÈ ½Ã°£ : " + sT.time, guiStyle);
+                GUI.Label(new Rect(100, 40, 200, 40), "ì„¤ì •ëœ ì‹œê°„ : " + sT.time, guiStyle);
             else if (standard == StandardTimeEvent.hybrid)
-                GUI.Label(new Rect(100, 40, 200, 40), "¼³Á¤µÈ ½Ã°£ : " + sT.time, guiStyle);
+                GUI.Label(new Rect(100, 40, 200, 40), "ì„¤ì •ëœ ì‹œê°„ : " + sT.time, guiStyle);
             else
-                GUI.Label(new Rect(100, 40, 200, 40), "¼³Á¤µÈ ½Ã°£ : " + DateTime.Now, guiStyle);
+                GUI.Label(new Rect(100, 40, 200, 40), "ì„¤ì •ëœ ì‹œê°„ : " + DateTime.Now, guiStyle);
 
-            GUI.Label(new Rect(100, 80, 200, 40), "ÇöÀç ½Ã°£ÃÊ : " + totalCurrentSeconds.ToString(), guiStyle);
-            GUI.Label(new Rect(100, 160, 200, 40), "´ÙÀ½ÀÌº¥Æ® ½Ã°£ÃÊ : " + nextEventTime.ToString(), guiStyle);
-            GUI.Label(new Rect(100, 200, 200, 40), "¼³Á¤µÈ ½ºÇÇµå : " +  sT.speed, guiStyle);
+            GUI.Label(new Rect(100, 80, 200, 40), "í˜„ì¬ ì‹œê°„ì´ˆ : " + totalCurrentSeconds.ToString(), guiStyle);
+            GUI.Label(new Rect(100, 160, 200, 40), "ë‹¤ìŒì´ë²¤íŠ¸ ì‹œê°„ì´ˆ : " + nextEventTime.ToString(), guiStyle);
+            GUI.Label(new Rect(100, 200, 200, 40), "ì„¤ì •ëœ ìŠ¤í”¼ë“œ : " +  sT.speed, guiStyle);
 
-            //GUI.Label(new Rect(100, 200, 200, 40), "ÀÌº¥Æ®Á¾·á ½Ã°£ÃÊ : " +(nextEventTime / 60) / 60 % 24 + "½Ã"+ endminutes.ToString() + "ºĞ" + endEvevtTime.ToString() + "ÃÊ/", guiStyle);
+            //GUI.Label(new Rect(100, 200, 200, 40), "ì´ë²¤íŠ¸ì¢…ë£Œ ì‹œê°„ì´ˆ : " +(nextEventTime / 60) / 60 % 24 + "ì‹œ"+ endminutes.ToString() + "ë¶„" + endEvevtTime.ToString() + "ì´ˆ/", guiStyle);
 
         }
     }
