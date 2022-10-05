@@ -68,10 +68,12 @@ public class timeEventController : MonoBehaviour
     private Thread clientReceiveThread;
     public string serverIp = "flyingart-server.8hlab.com";
     string serverMessage;
+    string playMode;
+
 
     private void Awake()
     {
-        savedTimeData = PlayerPrefs.GetInt("timeStandard");
+        savedTimeData = 1; // PlayerPrefs.GetInt("timeStandard");
             switch (savedTimeData)
             {
                 case 0:
@@ -161,14 +163,17 @@ public class timeEventController : MonoBehaviour
                         // Convert byte array to string message. 						
                         serverMessage = Encoding.ASCII.GetString(incommingData);
 
+
                         if ("PLAY".Equals(serverMessage))
                         {
                             totalCurrentSeconds = 0;
+                            sT.totalGameSeconds = 0;
                         }
 
                         if ("STOP".Equals(serverMessage))
                         {
                             totalCurrentSeconds = 60 * 60 * 12;
+                            sT.totalGameSeconds = totalCurrentSeconds;
                         }
 
                         Debug.Log("server message received as: " + serverMessage);
@@ -194,6 +199,7 @@ public class timeEventController : MonoBehaviour
 
         }
 
+        /*
         if(temp_nextEvent == null)
         {
             if (totalCurrentSeconds < firstEventTime) GameObject.Find("--Event_Start----").transform.GetChild(0).gameObject.SetActive(true);
@@ -203,6 +209,7 @@ public class timeEventController : MonoBehaviour
             else GameObject.Find("--Event_End----").transform.GetChild(0).gameObject.SetActive(false);
 
         }
+        */
 
         if (temp_nextEvent != null)
         {

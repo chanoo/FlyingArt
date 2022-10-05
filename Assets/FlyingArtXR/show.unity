@@ -404,6 +404,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2057676471}
     m_Modifications:
+    - target: {fileID: 2217168784532738607, guid: 523b2e6a21a50204f94396a4a4fbc786,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.700002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217168784532738607, guid: 523b2e6a21a50204f94396a4a4fbc786,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.399963
+      objectReference: {fileID: 0}
     - target: {fileID: 2217168784691342420, guid: 523b2e6a21a50204f94396a4a4fbc786,
         type: 3}
       propertyPath: m_RootOrder
@@ -427,12 +437,12 @@ PrefabInstance:
     - target: {fileID: 2217168784691342420, guid: 523b2e6a21a50204f94396a4a4fbc786,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2217168784691342420, guid: 523b2e6a21a50204f94396a4a4fbc786,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2217168784691342420, guid: 523b2e6a21a50204f94396a4a4fbc786,
         type: 3}
@@ -442,17 +452,17 @@ PrefabInstance:
     - target: {fileID: 2217168784691342420, guid: 523b2e6a21a50204f94396a4a4fbc786,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2217168784691342420, guid: 523b2e6a21a50204f94396a4a4fbc786,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2217168784691342420, guid: 523b2e6a21a50204f94396a4a4fbc786,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2217168784691342420, guid: 523b2e6a21a50204f94396a4a4fbc786,
         type: 3}
@@ -473,6 +483,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TimeEvent  Controller_new
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217168785478056684, guid: 523b2e6a21a50204f94396a4a4fbc786,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.200012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 523b2e6a21a50204f94396a4a4fbc786, type: 3}
